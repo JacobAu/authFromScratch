@@ -10,7 +10,7 @@ app.set("view engine","pug");
 app.use(bodyParser.urlencoded({extended:false})); 
 app.use(sessions({
     cookieName : "session",
-    secret: "askdgn", // probably should make this an environment variable.  export VARNAME = ""
+    secret: process.env.secret, // probably should make this an environment variable.  export VARNAME = ""
     duration: 30*60*1000,
     httpOnly : true,  //don't let js code access cookies
     secure : true, // only set cookies over https 
